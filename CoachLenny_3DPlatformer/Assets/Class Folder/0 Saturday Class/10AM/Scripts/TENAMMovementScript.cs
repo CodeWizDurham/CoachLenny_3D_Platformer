@@ -7,6 +7,14 @@ public class TENAMMovementScript : MonoBehaviour
     //Variable that controls our speed
     public float speed;
 
+    public float jump;
+
+    //This variable will be for touching the ground
+    public bool IsGrounded;
+
+    //This variable is for our game physics
+    public Rigidbody physics;
+
     // Update is called once per frame
     void Update()
     {
@@ -14,7 +22,7 @@ public class TENAMMovementScript : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             //Move my player forward at a speed of 10f by the second
-            transform.Translate(transform.forward * speed * Time.deltaTime);
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
         }
 
         //If I press the S key
@@ -32,6 +40,23 @@ public class TENAMMovementScript : MonoBehaviour
         ///Create a if statement when pressed DOWN the player jumps!
         ///use Input.GetKeyDown()
         ///use a RigidBody variable to use AddForce() method
+        
+        //If I press the Space Key and I am grounded
 
+
+    }
+
+    //This method checks the moment the player has touched another collider
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Is grounded is true
+        IsGrounded = true;
+    }
+
+    //This method checks the moment the player has stopped touched another collider
+    private void OnCollisionExit(Collision collision)
+    {
+        //Is grounded is false
+        IsGrounded = false;
     }
 }

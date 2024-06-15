@@ -562,7 +562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda91e1f56b6ada459cde6500023e213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 4
+  jump: 300
+  IsGrounded: 0
+  physics: {fileID: 1220523766}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
